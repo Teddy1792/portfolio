@@ -1,29 +1,27 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import '../styles/Home.scss';
 
-const Home = ({ isDarkMode, toggleTheme }) => {
+const Home = () => {
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
+
   return (
     <section>
-      <div className='summary'>
+      <div className={`summary ${isDarkMode ? 'dark-mode' : ''}`}>
         <p className='sumText'>
-          I'm a front-end developer based in Paris. I have a passion for crafting 
-          engaging and user-friendly web experiences. With a strong foundation in 
-          front-end technologies, I bring ideas to life through clean and efficient code.
+          I'm a <span className='stressed'>front-end developer</span> based in Paris. I have a passion for crafting 
+          engaging and user-friendly web experiences. With a <span className='stressed'>strong foundation in 
+          front-end technologies</span>, I bring ideas to life through clean and efficient code.
         </p>
-        <button onClick={toggleTheme}>Toggle Theme</button> {/* Example button */}
+        <div className='tags'>
+          <p>JavaScript</p>
+          <p>React</p>
+          <p>Sass</p>
+        </div>
       </div>
     </section>
   );
 };
 
-const mapStateToProps = (state) => ({
-  isDarkMode: state.isDarkMode,
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  toggleTheme: () => dispatch(toggleThemeAction()),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default Home;

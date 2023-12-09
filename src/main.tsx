@@ -1,13 +1,24 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import store from './techLayer/store'; // Import the Redux store
-
+import store from './techLayer/store';
 import App from './App';
+import './index.css';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <Provider store={store}>
     <App />
-  </Provider>,
-  document.getElementById('root')
+  </Provider>
 );
+
+
+store.subscribe(() => {
+  const isDarkMode = store.getState().darkMode.isDarkMode;
+  const body = document.querySelector('body');
+  if (body) {
+    body.classList.toggle('light-mode', isDarkMode); // Toggle based on isDarkMode
+  }
+});
+

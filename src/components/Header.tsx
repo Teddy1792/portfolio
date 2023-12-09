@@ -1,36 +1,47 @@
-import { connect } from 'react-redux';
-import { toggleThemeAction } from '../techLayer/store';
-
+import React, { useState } from 'react';
+import { FiSun } from "react-icons/fi";
+import { BsMoonStars } from "react-icons/bs";
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleDarkMode } from '../techLayer/actions';
+import { AiFillCode } from "react-icons/ai";
+import store from '../techLayer/store';
 import '../styles/Header.scss';
 
-const Header = ({ isLightMode, toggleTheme }) => {
-  // Call toggleTheme when the checkbox is clicked
-  const handleCheckboxClick = () => {
-    toggleTheme(); // Toggle the global theme state
+function Header() {
+  const dispatch = useDispatch();
+  const isDarkMode = useSelector((state) => state.darkMode.isDarkMode);
+  const [localIsDarkMode, setLocalIsDarkMode] = useState(isDarkMode);
+
+  const handleDarkModeToggle = () => {
+    dispatch(toggleDarkMode());
+    const updatedIsDarkMode = !localIsDarkMode;
+    setLocalIsDarkMode(updatedIsDarkMode);
+    console.log('isDarkMode true or false:', updatedIsDarkMode);
   };
 
   return (
     <header>
-      {/* Header content */}
-      <div className="mode-toggle">
+      <div className='headerName'>
+        <AiFillCode className='nameIcon' />
+        <h1>Theodore's portefolio</h1>
+      </div>
+      <div id="darkmode">
         <input
           type="checkbox"
-          id="lightModeToggle"
-          checked={!isLightMode} // Inverse of isLightMode for checked attribute
-          onChange={handleCheckboxClick} // Call handleCheckboxClick when the checkbox is clicked
+          className="checkbox"
+          id="checkbox"
+          checked={!localIsDarkMode} // Set the checkbox state based on local state
+          onChange={handleDarkModeToggle}
         />
-        <label htmlFor="lightModeToggle"></label>
+        <label htmlFor="checkbox" className="label">
+          <FiSun color="yellow" />
+          <BsMoonStars color="grey" />
+          
+          <div className="ball"></div>
+        </label>
       </div>
     </header>
   );
-};
+}
 
-const mapStateToProps = (state) => ({
-  isLightMode: state.isLightMode, // Map the Redux state to isLightMode
-});
-
-const mapDispatchToProps = (dispatch) => ({
-  toggleTheme: () => dispatch(toggleThemeAction()), // Dispatch the Redux action
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Header);
+export default Header;

@@ -1,0 +1,28 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+
+.appContainer{
+  display: flex;
+  flex-direction: row;
+  
+  .leftColumn{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    left: 30%;
+    top: 10%;
+  }
+  
+  .rightColumn{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 30%;
+    top: 10%;
+  }
+}

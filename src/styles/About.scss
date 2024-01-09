@@ -1,0 +1,13 @@
+@import '_variables';
+
+section{
+    margin-top: 5vw;
+    p{
+        margin-top: 0px;
+
+        .stressed{
+            color:$text-color-stressed;
+            font-weight: 600;
+        }
+    }
+}    

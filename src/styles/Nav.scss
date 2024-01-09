@@ -1,0 +1,40 @@
+@import './variables';
+
+ul {
+    list-style: none;
+    padding: 0px;
+    
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        cursor: pointer;
+        transition: ease-in-out 0.3s, color ease-in-out 0.3s;
+
+        &.active {
+            color: white; // Change color to white when active
+
+            .line {
+                width: 60px; // Change line width in active state
+                transition: width ease-in-out 0.1s; // Transition for line width
+            }
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $text-color;
+        transition: color ease-in-out 0.3s; // Transition for color change
+
+        &.active { // When the parent li is active
+            color: white; // Change anchor tag color to white
+        }
+    }
+    
+    .line {
+        border-bottom: solid 1px $text-color;
+        width: 30px;
+        margin-right: 5px;
+        transition: width ease-in-out 0.3s; // Transition for width change
+    }
+}

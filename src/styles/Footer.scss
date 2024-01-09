@@ -1,0 +1,13 @@
+@import './variables';
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    gap:15px;
+
+    svg{
+        width:25px;
+        height:25px;
+    }
+}

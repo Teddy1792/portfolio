@@ -1,0 +1,19 @@
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    margin-top: 5vw;
+
+    h1{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: #c6d3ec;
+    }
+    
+    h2{
+        color: #c9d4ed;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+}
+

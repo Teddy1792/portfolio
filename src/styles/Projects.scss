@@ -1,0 +1,51 @@
+@import '_variables';
+
+.project{
+    display: flex;
+    flex-direction: row;
+    align-items:flex-start;
+
+    .miniature{
+        img{
+            height: 76px;
+            border: solid 2px;
+            border-radius: 5px;
+            margin-right: 20px;
+        }
+    }
+
+    .description{
+
+        .titleProject{
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+
+            h2{
+                color: $text-color-stressed;
+                margin-top: -8px;
+                white-space: nowrap;
+            }
+
+            .arrow{
+                margin-top: 10px;
+                margin-left: 10px;
+                transform: rotate(-45deg);
+                font-size: 15px;
+            }
+        }
+
+        .tags{
+            display: flex;
+            flex-direction: row;
+            p{
+                box-sizing: border-box;
+                color: #56d7c4;
+                background-color: #122a39;
+                padding: 5px 10px 5px 10px;
+                border-radius: 20px;
+                margin: 5px;
+            }
+        }
+    }
+}

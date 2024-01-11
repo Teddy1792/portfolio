@@ -1,13 +1,22 @@
 @import './variables';
 
 footer{
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    gap:15px;
+    position: fixed;
+    bottom: 60px;
+    left: 250px;
 
-    svg{
-        width:25px;
-        height:25px;
+    a{
+        color: #9ca6bc;
+        transition: all 0.2s ease-in-out;
+        margin: 15px;
+
+        &:hover{
+            color: #c4d0e8;
+        }
+
+        svg{
+            width:30px;
+            height:30px;
+        }
     }
 }

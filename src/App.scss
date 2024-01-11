@@ -12,6 +12,7 @@
   margin: auto;
   
   .leftColumn{
+    margin-top: 7vw;
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -21,6 +22,7 @@
   }
   
   .rightColumn{
+    margin-top: 7vw;
     display: flex;
     flex-direction: column;
     position: absolute;

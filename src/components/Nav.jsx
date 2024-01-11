@@ -1,27 +1,29 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Nav.scss';
 
-function Nav() {
+function Nav({ aboutId, projectsId, experienceId, activeElement }) {
   const [activeItem, setActiveItem] = useState(null);
 
+  // Update activeItem based on activeElement prop
+  useEffect(() => {
+    setActiveItem(activeElement);
+  }, [activeElement]);
+
   // Function to handle scrolling to an element
-  const scrollToElement = (id) => {
+  const scrollToElement = (id, offset = 0) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+    window.scrollTo({
+      top: elementPosition - offset,
+      behavior: 'smooth',
+    });
       setActiveItem(id);
     }
   };
 
-  // Function to handle scroll event
   const handleScroll = () => {
-    // Logic to determine which section is in view
-    // Example:
-    // if (window.pageYOffset >= /* position of a specific section */) {
-    //   setActiveItem('about');
-    // } else if (...) {
-    //   // other conditions
-    // }
+
   };
 
   // Add event listener for scroll
@@ -38,29 +40,26 @@ function Nav() {
         <li
           className={activeItem === 'about' ? 'active' : ''}
           onMouseEnter={() => setActiveItem('about')}
-          onMouseLeave={() => setActiveItem(null)}
-          onClick={() => scrollToElement('about')}
+          onClick={() => scrollToElement(aboutId, 100)}
         >
           <div className='line'></div>
-          <a href="#about">About</a>
+          <div href="#about" class='anchor'>About</div>
         </li>
         <li
           className={activeItem === 'projects' ? 'active' : ''}
           onMouseEnter={() => setActiveItem('projects')}
-          onMouseLeave={() => setActiveItem(null)}
-          onClick={() => scrollToElement('projects')}
+          onClick={() => scrollToElement(projectsId)}
         >
           <div className='line'></div>
-          <a href="#projects">Projects</a>
+          <div href="#projects" class='anchor'>Projects</div>
         </li>
         <li
           className={activeItem === 'experience' ? 'active' : ''}
           onMouseEnter={() => setActiveItem('experience')}
-          onMouseLeave={() => setActiveItem(null)}
-          onClick={() => scrollToElement('experience')}
+          onClick={() => scrollToElement(experienceId)}
         >
           <div className='line'></div>
-          <a href="#experience">Experience</a>
+          <div href="#experience" class='anchor'>Experience</div>
         </li>
       </ul>
     </nav>

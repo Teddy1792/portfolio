@@ -43,7 +43,7 @@ function Nav({ aboutId, projectsId, experienceId, activeElement }) {
           onClick={() => scrollToElement(aboutId, 100)}
         >
           <div className='line'></div>
-          <div href="#about" class='anchor'>About</div>
+          <div href="#about" className='anchor'>About</div>
         </li>
         <li
           className={activeItem === 'projects' ? 'active' : ''}
@@ -51,7 +51,7 @@ function Nav({ aboutId, projectsId, experienceId, activeElement }) {
           onClick={() => scrollToElement(projectsId)}
         >
           <div className='line'></div>
-          <div href="#projects" class='anchor'>Projects</div>
+          <div href="#projects" className='anchor'>Projects</div>
         </li>
         <li
           className={activeItem === 'experience' ? 'active' : ''}
@@ -59,7 +59,7 @@ function Nav({ aboutId, projectsId, experienceId, activeElement }) {
           onClick={() => scrollToElement(experienceId)}
         >
           <div className='line'></div>
-          <div href="#experience" class='anchor'>Experience</div>
+          <div href="#experience" className='anchor'>Experience</div>
         </li>
       </ul>
     </nav>

@@ -4,30 +4,39 @@
   padding: 2rem;
 }
 
-
-.appContainer{
+.twoPages{
   display: flex;
-  flex-direction: row;
-  gap:  50px;
-  margin: auto;
-  
-  .leftColumn{
-    margin-top: 7vw;
-    display: flex;
-    flex-direction: column;
+  flex-direction: column;
+  #frontPage{
     position: fixed;
-    height: 100vw;
-    left: 10%;
     top: 0px;
+    left: 0px;
   }
   
-  .rightColumn{
-    margin-top: 7vw;
+  .appContainer{
     display: flex;
-    flex-direction: column;
-    position: absolute;
-    right: 20%;
-    top: 0px;
-    width: 450px;
+    flex-direction: row;
+    gap:  50px;
+    margin: auto;
+    
+    .leftColumn{
+      margin-top: 7vw;
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      height: 100vw;
+      left: 10%;
+      top: 0px;
+    }
+    
+    .rightColumn{
+      margin-top: 7vw;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      right: 20%;
+      top: 0px;
+      width: 450px;
+    }
   }
 }

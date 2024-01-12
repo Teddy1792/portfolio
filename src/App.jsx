@@ -97,7 +97,24 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
           </div>
           <div>
             <div id='experience' className={`experience ${topElement === 'experience' ? 'active' : ''}`} ref={experienceRef}>
-              <Experience />
+            <Experience
+              date="2022 - 2023"
+              diplomaTitle="JavaScript React Developer"
+              institution="OpenClassrooms"
+              content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
+            />
+            <Experience
+              date="2017 - 2019"
+              diplomaTitle="Master's degree of comparative literature"
+              institution="Sorbonne Nouvelle"
+              content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
+            />
+            <Experience
+              date="2013 - 2015"
+              diplomaTitle="Master's degree of European Affairs"
+              institution="Sciences Po Lyon and ENS Lyon"
+              content="Case studies on the influence strategies of a French automobile manufacturer."
+            />
             </div>
           </div>
         </div>

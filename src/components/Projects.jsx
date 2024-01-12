@@ -3,13 +3,15 @@ import '../styles/Projects.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
-function Projects({ imgSrc, title, description, tags, isFocused, onMouseEnter, onMouseLeave, isUnfocused }) {
+function Projects({ link, imgSrc, title, description, tags, isFocused, onMouseEnter, onMouseLeave, isUnfocused }) {
   // Conditionally apply classes based on the isFocused and isUnfocused props
   const projectClass = isFocused ? 'focused' : isUnfocused ? 'unfocused' : '';
 
   return (
     <section className='project'>
-      <div
+      <a 
+        href={link} 
+        target="_blank"
         className={`backgroundHover ${projectClass}`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
@@ -30,7 +32,7 @@ function Projects({ imgSrc, title, description, tags, isFocused, onMouseEnter, o
             ))}
           </div>
         </div>
-      </div>
+      </a>
     </section>
   );
 }

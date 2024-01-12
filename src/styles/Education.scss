@@ -1,10 +1,12 @@
-.experiences{
+.education{
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 20px;
     width: 500px;
-    margin-left: 20px;
+    margin: 20px;
+    margin-bottom: 40px;
+    position: relative;
 
     .dates{
         margin-top: 5px;
@@ -18,9 +20,16 @@
 
     .information{
         margin-left: 30px;
+
         h2{
             margin: 0px;
+
+            .icon{
+                margin-left: 10px;
+                font-size: 18px;
+            }
         }
+
         h3{
             margin-top: 0px;
             font-weight: 400;

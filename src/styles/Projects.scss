@@ -8,6 +8,11 @@
   margin: 0px;
   position: relative; /* Add relative positioning to .project */
 
+  a{
+    text-decoration: none;
+    color: $text-color;
+  }
+
   .backgroundHover {
     display: flex;
     flex-direction: row;

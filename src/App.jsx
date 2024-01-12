@@ -7,7 +7,7 @@ import Nav from './components/Nav';
 import Header from './components/Header';
 import About from './components/About';
 import Projects from './components/Projects';
-import Experience from './components/Experience';
+import Education from './components/Education';
 import Footer from './components/Footer';
 
 // images
@@ -64,6 +64,7 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
           <div>
             <div id='projects' className={`projects ${topElement === 'projects' ? 'active' : ''}`} ref={projectsRef}>
               <Projects
+              link='https://www.editionspassepasse.fr/'
               imgSrc={passepasse}
               title="Les éditions PassePasse"
               description="The shop front of an independent publishing house. An immersive shopping experience, fully coded and designed using React and vectorial illustrations."
@@ -97,21 +98,21 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
           </div>
           <div>
             <div id='experience' className={`experience ${topElement === 'experience' ? 'active' : ''}`} ref={experienceRef}>
-            <Experience
+            <Education
               date="2022 - 2023"
               diplomaTitle="JavaScript React Developer"
               institution="OpenClassrooms"
               content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
             />
-            <Experience
+            <Education
               date="2017 - 2019"
-              diplomaTitle="Master's degree of comparative literature"
+              diplomaTitle="M.A. in comparative literature"
               institution="Sorbonne Nouvelle"
               content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
             />
-            <Experience
+            <Education
               date="2013 - 2015"
-              diplomaTitle="Master's degree of European Affairs"
+              diplomaTitle="M.A. in European affairs"
               institution="Sciences Po Lyon and ENS Lyon"
               content="Case studies on the influence strategies of a French automobile manufacturer."
             />

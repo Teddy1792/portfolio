@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Nav.scss';
 
-function Nav({ aboutId, projectsId, experienceId, activeElement }) {
+function Nav({ aboutId, projectsId, educationId, activeElement }) {
   const [activeItem, setActiveItem] = useState(null);
 
   // Update activeItem based on activeElement prop
@@ -54,12 +54,12 @@ function Nav({ aboutId, projectsId, experienceId, activeElement }) {
           <div href="#projects" className='anchor'>Projects</div>
         </li>
         <li
-          className={activeItem === 'experience' ? 'active' : ''}
-          onMouseEnter={() => setActiveItem('experience')}
-          onClick={() => scrollToElement(experienceId)}
+          className={activeItem === 'education' ? 'active' : ''}
+          onMouseEnter={() => setActiveItem('education')}
+          onClick={() => scrollToElement(educationId)}
         >
           <div className='line'></div>
-          <div href="#experience" className='anchor'>Experience</div>
+          <div href="#education" className='anchor'>Education</div>
         </li>
       </ul>
     </nav>

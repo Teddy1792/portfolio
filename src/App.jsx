@@ -35,7 +35,7 @@ function App() {
 //check whether an element is on top:
 const { ref: aboutRef, inView: aboutInView } = useInView();
 const { ref: projectsRef, inView: projectsInView } = useInView();
-const { ref: experienceRef, inView: experienceInView } = useInView();
+const { ref: educationRef, inView: educationInView } = useInView();
 
 
   // State to keep track of the topmost visible element
@@ -45,8 +45,8 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
     // Determine the topmost visible element
     if (aboutInView) setTopElement('about');
     else if (projectsInView) setTopElement('projects');
-    else if (experienceInView) setTopElement('experience');
-  }, [aboutInView, projectsInView, experienceInView]);
+    else if (educationInView) setTopElement('education');
+  }, [aboutInView, projectsInView, educationInView]);
 
   return (
     <div className='twoPages'>
@@ -56,7 +56,7 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
       <div className='appContainer'>
         <div className='leftColumn'>
           <Header />
-          <Nav aboutId="about" projectsId="projects" experienceId="experience" activeElement={topElement}/>
+          <Nav aboutId="about" projectsId="projects" educationId="education" activeElement={topElement}/>
           <Footer />
         </div>
         <div className='rightColumn'>
@@ -97,25 +97,25 @@ const { ref: experienceRef, inView: experienceInView } = useInView();
             </div>
           </div>
           <div>
-            <div id='experience' className={`experience ${topElement === 'experience' ? 'active' : ''}`} ref={experienceRef}>
-            <Education
-              date="2022 - 2023"
-              diplomaTitle="JavaScript React Developer"
-              institution="OpenClassrooms"
-              content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
-            />
-            <Education
-              date="2017 - 2019"
-              diplomaTitle="M.A. in comparative literature"
-              institution="Sorbonne Nouvelle"
-              content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
-            />
-            <Education
-              date="2013 - 2015"
-              diplomaTitle="M.A. in European affairs"
-              institution="Sciences Po Lyon and ENS Lyon"
-              content="Case studies on the influence strategies of a French automobile manufacturer."
-            />
+            <div id='education' className={`educationSection ${topElement === 'education' ? 'active' : ''}`} ref={educationRef}>
+              <Education
+                date="2022 - 2023"
+                diplomaTitle="JavaScript React Developer"
+                institution="OpenClassrooms"
+                content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
+              />
+              <Education
+                date="2017 - 2019"
+                diplomaTitle="M.A. in comparative literature"
+                institution="Sorbonne Nouvelle"
+                content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
+              />
+              <Education
+                date="2013 - 2015"
+                diplomaTitle="M.A. in European affairs"
+                institution="Sciences Po Lyon and ENS Lyon"
+                content="Case studies on the influence strategies of a French automobile manufacturer."
+              />
             </div>
           </div>
         </div>

@@ -73,7 +73,7 @@ const P5Sketch = () => {
           );
 
           if (distFromLine < hoverThreshold) {
-            lineBrightness[i] = sketch.lerp(lineBrightness[i], 200, 0.1);
+            lineBrightness[i] = sketch.lerp(lineBrightness[i], 500, 0.1);
           } else {
             lineBrightness[i] = sketch.lerp(lineBrightness[i], 100, 0.1);
           }
@@ -81,7 +81,7 @@ const P5Sketch = () => {
           sketch.fill(pointColors[i]);
           sketch.ellipse(pt.x, pt.y, pointSize);
 
-          sketch.stroke(155, lineBrightness[i]);
+          sketch.stroke(50, lineBrightness[i]);
           sketch.line(pt.x, pt.y, lineEnd.x, lineEnd.y);
         }
       };

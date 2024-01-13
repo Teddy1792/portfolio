@@ -6,7 +6,7 @@
   align-items: flex-start;
   width: 500px;
   margin: 0px;
-  position: relative; /* Add relative positioning to .project */
+  position: relative;
 
   a{
     text-decoration: none;
@@ -113,7 +113,6 @@
     transition: all 0.2s ease-in-out;
   }
   
-
   .unfocused {
     opacity: 0.5;
     transition: all 0.3s ease;

@@ -24,6 +24,7 @@ function App() {
 
   const handleMouseEnter = (projectName) => {
     setFocusedProject(projectName);
+    console.log(projectName)
     setIsUnfocused(true);
   };
 
@@ -75,6 +76,7 @@ const { ref: educationRef, inView: educationInView } = useInView();
               isUnfocused={isUnfocused && focusedProject !== 'passepasse'}
               />
               <Projects
+                link='https://hrnet-xi.vercel.app/'
                 imgSrc={HRNet}
                 title="HRNet"
                 description="A web-based database management system for companies. User can add new employees through the use of a secure form."
@@ -97,26 +99,41 @@ const { ref: educationRef, inView: educationInView } = useInView();
             </div>
           </div>
           <div>
-            <div id='education' className={`educationSection ${topElement === 'education' ? 'active' : ''}`} ref={educationRef}>
+            <section id='education' className={`educationSection ${topElement === 'education' ? 'active' : ''}`} ref={educationRef}>
               <Education
+                title="openClassrooms"
                 date="2022 - 2023"
                 diplomaTitle="JavaScript React Developer"
                 institution="OpenClassrooms"
                 content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
+                isFocused={focusedProject === 'openClassrooms'}
+                onMouseEnter={() => handleMouseEnter('openClassrooms')}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== 'openClassrooms'}
               />
               <Education
+                title="compLit"
                 date="2017 - 2019"
                 diplomaTitle="M.A. in comparative literature"
                 institution="Sorbonne Nouvelle"
                 content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
+                isFocused={focusedProject === 'compLit'}
+                onMouseEnter={() => handleMouseEnter('compLit')}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== 'compLit'}
               />
               <Education
+                title="polSci"
                 date="2013 - 2015"
                 diplomaTitle="M.A. in European affairs"
                 institution="Sciences Po Lyon and ENS Lyon"
                 content="Case studies on the influence strategies of a French automobile manufacturer."
+                isFocused={focusedProject === 'polSci'}
+                onMouseEnter={() => handleMouseEnter('polSci')}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== 'polSci'}
               />
-            </div>
+            </section>
           </div>
         </div>
       </div>

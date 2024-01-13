@@ -4,9 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Education.scss';
 
-function Education({ date, diplomaTitle, institution, content }) {
+function Education({ date, diplomaTitle, institution, content, isFocused, onMouseEnter, onMouseLeave, isUnfocused }) {
+  const educationClass = isFocused ? 'focused' : isUnfocused ? 'unfocused' : '';
+
   return (
-    <section className="education">
+    <div className={`education backgroundHover ${educationClass}`}
+    onMouseEnter={onMouseEnter}
+    onMouseLeave={onMouseLeave}
+    >
+      <div className={`backgroundBehind ${educationClass}`}></div>
       <div className="dates">
         <p>{date}</p>
       </div>
@@ -19,7 +25,7 @@ function Education({ date, diplomaTitle, institution, content }) {
           <p>{content}</p>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

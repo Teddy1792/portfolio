@@ -87,6 +87,7 @@ const { ref: educationRef, inView: educationInView } = useInView();
                 isUnfocused={isUnfocused && focusedProject !== 'HRNet'}
               />
               <Projects
+                link='https://argentbankdesign.vercel.app/'
                 imgSrc={argentBank}
                 title="ArgentBank"
                 description="A login system for a bank. User can connect through a secure identification process and access their account."

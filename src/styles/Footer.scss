@@ -19,4 +19,11 @@ footer{
             height:30px;
         }
     }
+
+    &.lightMode{
+        
+        a:hover{
+                color: $text-color-light;
+            }
+    }
 }

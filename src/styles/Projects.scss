@@ -13,6 +13,38 @@
     color: $text-color;
   }
 
+  &.lightMode{
+    a{
+      color: $text-color-light;
+    }
+
+    .miniature img {
+      border-color: $secondary-color-light !important;
+    }
+
+    .backgroundHover{
+      .description {
+        .titleProject {  
+          h2 {
+            color:$text-color-stressed-light;
+          }
+        }
+      }
+    }
+
+    .focused {
+      .description .titleProject {
+        h2, .arrow {
+          color:$text-color-green-light;
+        }
+      }
+      .miniature img {
+        border-color: $text-color-green-light !important;
+      }
+      }
+  }
+  
+
   .backgroundHover {
     display: flex;
     flex-direction: row;

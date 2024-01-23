@@ -1,14 +1,17 @@
 import React from 'react';
-import '../styles/Projects.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { useDarkMode } from './DarkModeContext';
+import '../styles/Projects.scss';
 
 function Projects({ link, imgSrc, title, description, tags, isFocused, onMouseEnter, onMouseLeave, isUnfocused }) {
   // Conditionally apply classes based on the isFocused and isUnfocused props
   const projectClass = isFocused ? 'focused' : isUnfocused ? 'unfocused' : '';
 
+  const { darkMode } = useDarkMode();
+
   return (
-    <section className='project'>
+    <section className={`project ${!darkMode ? 'lightMode' : ''}`}>
       <a 
         href={link} 
         target="_blank"

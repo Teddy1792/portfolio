@@ -48,7 +48,7 @@ const P5Sketch = () => {
 
       sketch.draw = () => {
         if (darkMode) {
-          sketch.background(16, 23, 32); // Dark mode background
+          sketch.background(16, 23, 42); // Dark mode background
         } else {
           sketch.background(200, 212, 227); // Light mode background
         }

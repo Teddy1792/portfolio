@@ -13,7 +13,7 @@
   background-color: $primary-color;
 
   &.lightMode{
-    color: black;
+    color: $text-color-light;
     background-color: $primary-color-light;
   }
   

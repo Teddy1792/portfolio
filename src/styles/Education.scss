@@ -10,6 +10,19 @@
     margin-bottom: 40px;
     position: relative;
 
+    &.lightMode{
+        &.unfocused {
+            color: $text-color-stressed-light !important;
+        }
+
+        &.focused {
+            h2 {
+                color: $text-color-green-light !important;
+            }
+        }
+
+    }
+
     &, .backgroundHover {
         display: flex;
         flex-direction: row;

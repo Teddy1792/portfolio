@@ -1,8 +1,10 @@
+import { useDarkMode } from './DarkModeContext';
 import '../styles/About.scss';
 
 function About () {
+  const { darkMode } = useDarkMode();
     return (
-        <section className='about'>
+        <section className={`about ${!darkMode ? 'lightMode' : ''}`}>
           <p>I used to work in the Public sector or in international institutions, 
             where I longed for my adolescent days, spent exploring unknown software 
             for <span className='stressed'>video editing</span> or managing <span className='stressed'>php bulletin boards</span>. I am now back to my /root/s, 

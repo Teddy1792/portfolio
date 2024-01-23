@@ -12,4 +12,12 @@ section{
             font-weight: 600;
         }
     }
+
+    &.lightMode{
+        p{
+            .stressed{
+                color:$text-color-stressed-light;
+            }
+        }
+    }
 }    

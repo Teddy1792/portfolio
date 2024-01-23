@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
+import { useDarkMode } from './DarkModeContext';
 
 const P5Sketch = () => {
   const sketchRef = useRef();
+  const { darkMode } = useDarkMode();
 
   useEffect(() => {
     const s = (sketch) => {
@@ -45,7 +47,11 @@ const P5Sketch = () => {
       };
 
       sketch.draw = () => {
-        sketch.background(16, 23, 32);
+        if (darkMode) {
+          sketch.background(16, 23, 32); // Dark mode background
+        } else {
+          sketch.background(200, 212, 227); // Light mode background
+        }
 
         let angle = sketch.radians(0.03);
 
@@ -72,10 +78,19 @@ const P5Sketch = () => {
             sketch.mouseY
           );
 
-          if (distFromLine < hoverThreshold) {
-            lineBrightness[i] = sketch.lerp(lineBrightness[i], 900, 0.1);
+          if (!darkMode) {
+            // Decrease lineBrightness when hovered if dark mode is not active
+            if (distFromLine < hoverThreshold+20) {
+              lineBrightness[i] = sketch.lerp(lineBrightness[i], 10, 0.1);
+            } else {
+              lineBrightness[i] = sketch.lerp(lineBrightness[i], 50, 0.1);
+            }
           } else {
-            lineBrightness[i] = sketch.lerp(lineBrightness[i], 100, 0.1);
+            if (distFromLine < hoverThreshold) {
+              lineBrightness[i] = sketch.lerp(lineBrightness[i], 900, 0.1);
+            } else {
+              lineBrightness[i] = sketch.lerp(lineBrightness[i], 50, 0.1);
+            }
           }
 
           sketch.fill(pointColors[i]);
@@ -146,7 +161,7 @@ const P5Sketch = () => {
       // Cleanup code if needed
       sketchRef.current.remove();
     };
-  }, []);
+  }, [darkMode]);
 
   return null; 
 };

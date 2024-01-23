@@ -1,8 +1,11 @@
+import { useDarkMode } from './DarkModeContext';
 import '../styles/Header.scss';
 
 function Header () {
+  const { darkMode } = useDarkMode();
+
     return (
-        <header>
+        <header className={!darkMode ? 'lightMode' : ''}>
           <h1>Theodore Abitbol</h1>
           <h2>Front End Developper</h2>
           <p>I build engaging and reactive websites</p>

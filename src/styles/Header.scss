@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 header{
     display: flex;
     flex-direction: column;
@@ -7,13 +9,23 @@ header{
     h1{
         margin-top: 0px;
         margin-bottom: 0px;
-        color: #c6d3ec;
+        color: $text-color-stressed;
     }
     
     h2{
-        color: #c9d4ed;
+        color: $text-color-stressed;
         font-size: 1.25rem;
         line-height: 1.75rem;
+    }
+
+    &.lightMode{
+        h1{
+            color: $text-color-light;
+        }
+
+        h2{
+            color: $text-color-light;
+        }
     }
 }
 

@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useDarkMode } from './DarkModeContext';
 import '../styles/Nav.scss';
 
 function Nav({ aboutId, projectsId, educationId, activeElement }) {
+  const { darkMode } = useDarkMode();
+
   const [activeItem, setActiveItem] = useState(null);
 
   // Update activeItem based on activeElement prop
@@ -35,7 +38,7 @@ function Nav({ aboutId, projectsId, educationId, activeElement }) {
   }, []);
 
   return (
-    <nav>
+    <nav className={!darkMode ? 'lightMode' : ''}>
       <ul>
         <li
           className={activeItem === 'about' ? 'active' : ''}

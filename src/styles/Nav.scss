@@ -46,3 +46,23 @@ nav{
         font-weight: 600;
     }
 }
+
+.lightMode{
+    ul {
+        li {
+            a {
+                color: $text-color-light;
+            }
+
+            &.active{
+                .line{
+                    color: $text-color-stressed-light;
+                }
+
+                .anchor {
+                    color: $text-color-stressed-light;
+                }
+            }
+        }
+    }
+}

@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useDarkMode } from './components/DarkModeContext';
+import { useDarkMode } from './components/darkModeContext';
 import { useInView } from 'react-intersection-observer';
-
 
 // components
 import P5Sketch from './components/P5Sketch';

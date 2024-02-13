@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
-import { useDarkMode } from './darkmodecontext';
+import { useDarkMode } from './Darkmodecontext';
 import '../styles/Projects.scss';
 
 function Projects({ link, imgSrc, title, description, tags, isFocused, onMouseEnter, onMouseLeave, isUnfocused }) {

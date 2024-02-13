@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useDarkMode } from './components/darkmodecontext.jsx';
+import { useDarkMode } from './components/darkModeContext.jsx';
 import { useInView } from 'react-intersection-observer';
 
 // components

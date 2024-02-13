@@ -1,0 +1,59 @@
+{
+  "hash": "b7ac2a91",
+  "browserHash": "84575af3",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "c972046d",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "b6222c48",
+      "needsInterop": true
+    },
+    "react-intersection-observer": {
+      "src": "../../node_modules/react-intersection-observer/index.mjs",
+      "file": "react-intersection-observer.js",
+      "fileHash": "c2dd7886",
+      "needsInterop": false
+    },
+    "@fortawesome/react-fontawesome": {
+      "src": "../../node_modules/@fortawesome/react-fontawesome/index.es.js",
+      "file": "@fortawesome_react-fontawesome.js",
+      "fileHash": "839359ff",
+      "needsInterop": false
+    },
+    "@fortawesome/free-solid-svg-icons": {
+      "src": "../../node_modules/@fortawesome/free-solid-svg-icons/index.mjs",
+      "file": "@fortawesome_free-solid-svg-icons.js",
+      "fileHash": "39231073",
+      "needsInterop": false
+    },
+    "prop-types": {
+      "src": "../../node_modules/prop-types/index.js",
+      "file": "prop-types.js",
+      "fileHash": "efda2e0b",
+      "needsInterop": true
+    },
+    "p5": {
+      "src": "../../node_modules/p5/lib/p5.min.js",
+      "file": "p5.js",
+      "fileHash": "63973e74",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-MOERMBVA": {
+      "file": "chunk-MOERMBVA.js"
+    },
+    "chunk-U4ZBJF3B": {
+      "file": "chunk-U4ZBJF3B.js"
+    },
+    "chunk-BQWMX7FD": {
+      "file": "chunk-BQWMX7FD.js"
+    }
+  }
+}

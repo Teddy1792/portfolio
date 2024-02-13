@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDarkMode } from './darkmodecontext';
+import { useDarkMode } from './Darkmodecontext';
 import '../styles/Nav.scss';
 
 function Nav({ aboutId, projectsId, educationId, activeElement }) {

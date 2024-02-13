@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useDarkMode } from './components/darkmodecontext.jsx';
+import { useDarkMode } from './Components/darkmodecontext.jsx';
 import { useInView } from 'react-intersection-observer';
 
 // components
-import P5Sketch from './components/P5Sketch';
-import Nav from './components/Nav';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Footer from './components/Footer';
+import P5Sketch from './Components/P5Sketch';
+import Nav from './Components/Nav';
+import Header from './Components/Header';
+import About from './Components/About';
+import Projects from './Components/Projects';
+import Education from './Components/Education';
+import Footer from './Components/Footer';
 
 // images
 import passepasse from './assets/miniatures/passepasse.png';

@@ -1,0 +1,31 @@
+@import '_variables.scss';
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content:baseline;
+    margin-top: 0vw;
+
+    h1{
+        margin-top: 0px;
+        margin-bottom: 0px;
+        color: $text-color-stressed;
+    }
+    
+    h2{
+        color: $text-color-stressed;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+    }
+
+    &.lightMode{
+        h1{
+            color: $text-color-light;
+        }
+
+        h2{
+            color: $text-color-light;
+        }
+    }
+}
+

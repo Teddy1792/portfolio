@@ -1,0 +1,23 @@
+@import '_variables';
+
+section{
+    margin-top: 0vw;
+    margin-bottom: 100px;
+    
+    p{
+        margin-top: 0px;
+
+        .stressed{
+            color:$text-color-stressed;
+            font-weight: 600;
+        }
+    }
+
+    &.lightMode{
+        p{
+            .stressed{
+                color:$text-color-stressed-light;
+            }
+        }
+    }
+}    

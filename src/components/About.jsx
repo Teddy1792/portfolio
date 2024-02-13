@@ -1,4 +1,4 @@
-import { useDarkMode } from './darkmodecontext';
+import { useDarkMode } from './darkmodecontext.jsx';
 import '../styles/About.scss';
 
 function About () {

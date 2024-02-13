@@ -1,4 +1,4 @@
-import { useDarkMode } from './darkModeContext';
+import { useDarkMode } from './darkModeContext.jsx';
 import '../styles/Header.scss';
 
 function Header () {

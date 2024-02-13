@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useDarkMode } from './darkmodecontext';
+import { useDarkMode } from './darkmodecontext.jsx';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAward } from '@fortawesome/free-solid-svg-icons';
 import '../styles/Education.scss';

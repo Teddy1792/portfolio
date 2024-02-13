@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import p5 from 'p5';
-import { useDarkMode } from './darkmodecontext.jsx';
+import { useDarkMode } from './darkModeContext.jsx';
 
 const P5Sketch = () => {
   const sketchRef = useRef();

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDarkMode } from './darkmodecontext.jsx';
+import { useDarkMode } from './darkModeContext.jsx';
 import '../styles/Footer.scss';
 
 function Footer() {

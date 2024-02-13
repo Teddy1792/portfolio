@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
-import { DarkModeProvider } from './components/darkModeContext';
+import { DarkModeProvider } from './components/darkModeContext.jsx';
 import './index.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(

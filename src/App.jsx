@@ -14,7 +14,7 @@ import Footer from './components/Footer';
 // images
 import passepasse from './assets/miniatures/passepasse.png';
 import HRNet from './assets/miniatures/HRNet.png';
-import argentBank from './assets/miniatures/argentBank.png';
+import alfaRomeo from './assets/miniatures/alfaRomeo.png';
 
 import './App.scss';
 
@@ -90,10 +90,10 @@ const { ref: educationRef, inView: educationInView } = useInView();
                   isUnfocused={isUnfocused && focusedProject !== 'HRNet'}
                 />
                 <Projects
-                  link='https://argentbankdesign.vercel.app/'
-                  imgSrc={argentBank}
-                  title="ArgentBank"
-                  description="A login system for a bank. User can connect through a secure identification process and access their account."
+                  link='https://alfa-romeo-landpage.vercel.app'
+                  imgSrc={alfaRomeo}
+                  title="Alfa Romeo"
+                  description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and send a mail to the client"
                   tags={['React', 'NodeJS']}
                   isFocused={focusedProject === 'argentBank'}
                   onMouseEnter={() => handleMouseEnter('argentBank')}

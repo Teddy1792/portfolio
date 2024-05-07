@@ -94,7 +94,7 @@ const { ref: educationRef, inView: educationInView } = useInView();
                   imgSrc={alfaRomeo}
                   title="Alfa Romeo"
                   description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and send a mail to the client"
-                  tags={['React', 'NodeJS']}
+                  tags={['React']}
                   isFocused={focusedProject === 'argentBank'}
                   onMouseEnter={() => handleMouseEnter('argentBank')}
                   onMouseLeave={handleMouseLeave}

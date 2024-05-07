@@ -93,7 +93,7 @@ const { ref: educationRef, inView: educationInView } = useInView();
                   link='https://alfa-romeo-landpage.vercel.app'
                   imgSrc={alfaRomeo}
                   title="Alfa Romeo"
-                  description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and send a mail to the client"
+                  description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and notify the client."
                   tags={['React']}
                   isFocused={focusedProject === 'argentBank'}
                   onMouseEnter={() => handleMouseEnter('argentBank')}

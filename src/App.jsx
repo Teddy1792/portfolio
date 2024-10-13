@@ -1,22 +1,23 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useDarkMode } from './components/darkModeContext.jsx';
-import { useInView } from 'react-intersection-observer';
+import React, { useState, useEffect, useRef } from "react";
+import { useDarkMode } from "./components/darkModeContext.jsx";
+import { useInView } from "react-intersection-observer";
 
 // components
-import P5Sketch from './components/P5Sketch';
-import Nav from './components/Nav';
-import Header from './components/Header';
-import About from './components/About';
-import Projects from './components/Projects';
-import Education from './components/Education';
-import Footer from './components/Footer';
+import P5Sketch from "./components/P5Sketch";
+import Nav from "./components/Nav";
+import Header from "./components/Header";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Education from "./components/Education";
+import Footer from "./components/Footer";
 
 // images
-import passepasse from './assets/miniatures/passepasse.png';
-import HRNet from './assets/miniatures/HRNet.png';
-import alfaRomeo from './assets/miniatures/alfaRomeo.png';
+import passepasse from "./assets/miniatures/passepasse.png";
+import HRNet from "./assets/miniatures/HRNet.png";
+import alfaRomeo from "./assets/miniatures/alfaRomeo.png";
+import hipto from "./assets/miniatures/hipto.png";
 
-import './App.scss';
+import "./App.scss";
 
 function App() {
   //dark mode
@@ -36,113 +37,150 @@ function App() {
     setIsUnfocused(false);
   };
 
-//check whether an element is on top:
-const { ref: aboutRef, inView: aboutInView } = useInView();
-const { ref: projectsRef, inView: projectsInView } = useInView();
-const { ref: educationRef, inView: educationInView } = useInView();
-
+  //check whether an element is on top:
+  const { ref: aboutRef, inView: aboutInView } = useInView();
+  const { ref: projectsRef, inView: projectsInView } = useInView();
+  const { ref: educationRef, inView: educationInView } = useInView();
 
   // State to keep track of the topmost visible element
-  const [topElement, setTopElement] = useState('about');
+  const [topElement, setTopElement] = useState("about");
 
   useEffect(() => {
     // Determine the topmost visible element
-    if (aboutInView) setTopElement('about');
-    else if (projectsInView) setTopElement('projects');
-    else if (educationInView) setTopElement('education');
+    if (aboutInView) setTopElement("about");
+    else if (projectsInView) setTopElement("projects");
+    else if (educationInView) setTopElement("education");
   }, [aboutInView, projectsInView, educationInView]);
 
   return (
-    <div className={`twoPages ${!darkMode ? 'lightMode' : ''}`}>
-        <div id='frontPage'>
-          <P5Sketch/>
+    <div className={`twoPages ${!darkMode ? "lightMode" : ""}`}>
+      <div id="frontPage">
+        <P5Sketch />
+      </div>
+      <div className="appContainer">
+        <div className="leftColumn">
+          <Header />
+          <Nav
+            aboutId="about"
+            projectsId="projects"
+            educationId="education"
+            activeElement={topElement}
+          />
+          <Footer />
         </div>
-        <div className='appContainer'>
-          <div className='leftColumn'>
-            <Header />
-            <Nav aboutId="about" projectsId="projects" educationId="education" activeElement={topElement}/>
-            <Footer />
+        <div className="rightColumn">
+          <div>
+            <div
+              id="about"
+              className={`about ${topElement === "about" ? "active" : ""}`}
+              ref={aboutRef}
+            >
+              <About />
+            </div>
           </div>
-          <div className='rightColumn'>
-            <div><div id='about' className={`about ${topElement === 'about' ? 'active' : ''}`} ref={aboutRef}><About /></div></div>
-            <div>
-              <div id='projects' className={`projects ${topElement === 'projects' ? 'active' : ''}`} ref={projectsRef}>
-                <Projects
-                link='https://www.editionspassepasse.fr/'
+          <div>
+            <div
+              id="projects"
+              className={`projects ${
+                topElement === "projects" ? "active" : ""
+              }`}
+              ref={projectsRef}
+            >
+              <h2>Employment</h2>
+              <Projects
+                link="https://hipto.com/"
+                imgSrc={hipto}
+                title="hipto"
+                description="During a six month internship, I developed Landing pages for prestigious clients and took care of integrating and tracking. I also developed the testing units of a custom made CMS using NextJS. See example below!"
+                tags={["React", "TailWind", "NextJS"]}
+                isFocused={focusedProject === "hipto"}
+                onMouseEnter={() => handleMouseEnter("hipto")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "hipto"}
+              />
+              <Projects
+                link="https://alfa-romeo-landpage.vercel.app"
+                imgSrc={alfaRomeo}
+                title="Alfa Romeo"
+                description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and notify the client."
+                tags={["React"]}
+                isFocused={focusedProject === "argentBank"}
+                onMouseEnter={() => handleMouseEnter("argentBank")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "argentBank"}
+              />
+              <h2>Freelance projects</h2>
+              <Projects
+                link="https://www.editionspassepasse.fr/"
                 imgSrc={passepasse}
                 title="Les éditions PassePasse"
                 description="The shop front of an independent publishing house. An immersive shopping experience, fully coded and designed using React and vectorial illustrations."
-                tags={['React', 'Stripe']}
-                isFocused={focusedProject === 'passepasse'}
-                onMouseEnter={() => handleMouseEnter('passepasse')}
+                tags={["React", "Stripe"]}
+                isFocused={focusedProject === "passepasse"}
+                onMouseEnter={() => handleMouseEnter("passepasse")}
                 onMouseLeave={handleMouseLeave}
-                isUnfocused={isUnfocused && focusedProject !== 'passepasse'}
-                />
-                <Projects
-                  link='https://hrnet-xi.vercel.app/'
-                  imgSrc={HRNet}
-                  title="HRNet"
-                  description="A web-based database management system for companies. User can add new employees through the use of a secure form."
-                  tags={['React', 'Redux']}
-                  isFocused={focusedProject === 'HRNet'}
-                  onMouseEnter={() => handleMouseEnter('HRNet')}
-                  onMouseLeave={handleMouseLeave}
-                  isUnfocused={isUnfocused && focusedProject !== 'HRNet'}
-                />
-                <Projects
-                  link='https://alfa-romeo-landpage.vercel.app'
-                  imgSrc={alfaRomeo}
-                  title="Alfa Romeo"
-                  description="A custom-made landpage using a dynamic form and RESTful APIs in order to locate the customer and notify the client."
-                  tags={['React']}
-                  isFocused={focusedProject === 'argentBank'}
-                  onMouseEnter={() => handleMouseEnter('argentBank')}
-                  onMouseLeave={handleMouseLeave}
-                  isUnfocused={isUnfocused && focusedProject !== 'argentBank'}
-                />
-              </div>
+                isUnfocused={isUnfocused && focusedProject !== "passepasse"}
+              />
+              <Projects
+                link="https://hrnet-xi.vercel.app/"
+                imgSrc={HRNet}
+                title="HRNet"
+                description="A web-based database management system for companies. User can add new employees through the use of a secure form."
+                tags={["React", "Redux"]}
+                isFocused={focusedProject === "HRNet"}
+                onMouseEnter={() => handleMouseEnter("HRNet")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "HRNet"}
+              />
             </div>
-            <div>
-              <section id='education' className={`educationSection ${topElement === 'education' ? 'active' : ''}`} ref={educationRef}>
-                <Education
-                  title="openClassrooms"
-                  date="2022 - 2023"
-                  diplomaTitle="JavaScript React Developer"
-                  institution="OpenClassrooms"
-                  content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
-                  isFocused={focusedProject === 'openClassrooms'}
-                  onMouseEnter={() => handleMouseEnter('openClassrooms')}
-                  onMouseLeave={handleMouseLeave}
-                  isUnfocused={isUnfocused && focusedProject !== 'openClassrooms'}
-                />
-                <Education
-                  title="compLit"
-                  date="2017 - 2019"
-                  diplomaTitle="M.A. in comparative literature"
-                  institution="Sorbonne Nouvelle"
-                  content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
-                  isFocused={focusedProject === 'compLit'}
-                  onMouseEnter={() => handleMouseEnter('compLit')}
-                  onMouseLeave={handleMouseLeave}
-                  isUnfocused={isUnfocused && focusedProject !== 'compLit'}
-                />
-                <Education
-                  title="polSci"
-                  date="2013 - 2015"
-                  diplomaTitle="M.A. in European affairs"
-                  institution="Sciences Po Lyon and ENS Lyon"
-                  content="Case studies on the influence strategies of a French automobile manufacturer."
-                  isFocused={focusedProject === 'polSci'}
-                  onMouseEnter={() => handleMouseEnter('polSci')}
-                  onMouseLeave={handleMouseLeave}
-                  isUnfocused={isUnfocused && focusedProject !== 'polSci'}
-                />
-              </section>
-            </div>
+          </div>
+          <div>
+            <section
+              id="education"
+              className={`educationSection ${
+                topElement === "education" ? "active" : ""
+              }`}
+              ref={educationRef}
+            >
+              <Education
+                title="openClassrooms"
+                date="2022 - 2023"
+                diplomaTitle="JavaScript React Developer"
+                institution="OpenClassrooms"
+                content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
+                isFocused={focusedProject === "openClassrooms"}
+                onMouseEnter={() => handleMouseEnter("openClassrooms")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "openClassrooms"}
+              />
+              <Education
+                title="compLit"
+                date="2017 - 2019"
+                diplomaTitle="M.A. in comparative literature"
+                institution="Sorbonne Nouvelle"
+                content="An analysis of the politics of drone in contemporaneous fiction, and their influence on narrative structures."
+                isFocused={focusedProject === "compLit"}
+                onMouseEnter={() => handleMouseEnter("compLit")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "compLit"}
+              />
+              <Education
+                title="polSci"
+                date="2013 - 2015"
+                diplomaTitle="M.A. in European affairs"
+                institution="Sciences Po Lyon and ENS Lyon"
+                content="Case studies on the influence strategies of a French automobile manufacturer."
+                isFocused={focusedProject === "polSci"}
+                onMouseEnter={() => handleMouseEnter("polSci")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "polSci"}
+              />
+            </section>
           </div>
         </div>
       </div>
-  )
+    </div>
+  );
 }
 
 export default App;

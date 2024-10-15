@@ -16,6 +16,15 @@ import passepasse from "./assets/miniatures/passepasse.png";
 import HRNet from "./assets/miniatures/HRNet.png";
 import alfaRomeo from "./assets/miniatures/alfaRomeo.png";
 import hipto from "./assets/miniatures/hipto.png";
+import react from "./assets/react.svg";
+import next from "./assets/next.svg";
+import tailwind from "./assets/tailwind.svg";
+import sass from "./assets/sass.svg";
+import html from "./assets/html.svg";
+import css from "./assets/sass.svg";
+import copilot from "./assets/copilot.svg";
+import midjourney from "./assets/midjourney.svg";
+import chatgpt from "./assets/chatgpt.svg";
 
 import "./App.scss";
 
@@ -79,6 +88,47 @@ function App() {
             </div>
           </div>
           <div>
+            <div className="stack">
+              <h2>My stack</h2>
+              <div className="stackIcon">
+                <div className="icon">
+                  <img src={react} alt="ReactJS" />
+                  <p>ReactJS</p>
+                </div>
+                <div className="icon">
+                  <img src={next} alt="NextJS" />
+                  <p>NextJS</p>
+                </div>
+                <div className="icon">
+                  <img src={tailwind} alt="Tailwind" />
+                  <p>Tailwind</p>
+                </div>
+                <div className="icon">
+                  <img src={sass} alt="Sass" />
+                  <p>Sass</p>
+                </div>
+                <div className="icon">
+                  <img src={html} alt="HTML" />
+                  <p>HTML</p>
+                </div>
+                <div className="icon">
+                  <img src={css} alt="CSS" />
+                  <p>CSS</p>
+                </div>
+                <div className="icon">
+                  <img src={copilot} alt="copilot" />
+                  <p>Copilot</p>
+                </div>
+                <div className="icon">
+                  <img src={midjourney} alt="Midjourney" />
+                  <p>Midjourney</p>
+                </div>
+                <div className="icon">
+                  <img src={chatgpt} alt="Chatgpt" />
+                  <p>Chatgpt</p>
+                </div>
+              </div>
+            </div>
             <div
               id="projects"
               className={`projects ${

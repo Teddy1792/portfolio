@@ -21,7 +21,7 @@ import next from "./assets/next.svg";
 import tailwind from "./assets/tailwind.svg";
 import sass from "./assets/sass.svg";
 import html from "./assets/html.svg";
-import css from "./assets/sass.svg";
+import css from "./assets/css.svg";
 import copilot from "./assets/copilot.svg";
 import midjourney from "./assets/midjourney.svg";
 import chatgpt from "./assets/chatgpt.svg";
@@ -88,7 +88,7 @@ function App() {
             </div>
           </div>
           <div>
-            <div className="stack">
+            {/* <div className="stack">
               <h2>My stack</h2>
               <div className="stackIcon">
                 <div className="icon">
@@ -128,7 +128,7 @@ function App() {
                   <p>Chatgpt</p>
                 </div>
               </div>
-            </div>
+            </div> */}
             <div
               id="projects"
               className={`projects ${

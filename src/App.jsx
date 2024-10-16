@@ -91,12 +91,18 @@ function App() {
                 </div>
                 <div className="icon">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
-
                   <p>NextJS</p>
                 </div>
                 <div className="icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg" />
+                  <p>MongoDB</p>
+                </div>
+                <div className="icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
+                  <p>CSS</p>
+                </div>
+                <div className="icon">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
-
                   <p>Tailwind</p>
                 </div>
                 <div className="icon">
@@ -108,20 +114,16 @@ function App() {
                   <p>HTML</p>
                 </div>
                 <div className="icon">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                  <p>CSS</p>
-                </div>
-                <div className="icon">
                   <img src={copilot} alt="copilot" />
                   <p>Copilot</p>
                 </div>
                 <div className="icon">
-                  <img src={midjourney} alt="Midjourney" />
-                  <p>Midjourney</p>
-                </div>
-                <div className="icon">
                   <img src={chatgpt} alt="Chatgpt" />
                   <p>Chatgpt</p>
+                </div>
+                <div className="icon">
+                  <img src={midjourney} alt="Midjourney" />
+                  <p>Midjourney</p>
                 </div>
               </div>
             </div>
@@ -155,7 +157,7 @@ function App() {
                 onMouseLeave={handleMouseLeave}
                 isUnfocused={isUnfocused && focusedProject !== "argentBank"}
               />
-              <h2>Freelance projects</h2>
+              <h2>Freelance</h2>
               <Projects
                 link="https://www.editionspassepasse.fr/"
                 imgSrc={passepasse}

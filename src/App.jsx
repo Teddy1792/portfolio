@@ -16,12 +16,6 @@ import passepasse from "./assets/miniatures/passepasse.png";
 import HRNet from "./assets/miniatures/HRNet.png";
 import alfaRomeo from "./assets/miniatures/alfaRomeo.png";
 import hipto from "./assets/miniatures/hipto.png";
-import react from "./assets/react.svg";
-import next from "./assets/next.svg";
-import tailwind from "./assets/tailwind.svg";
-import sass from "./assets/sass.svg";
-import html from "./assets/html.svg";
-import css from "./assets/css.svg";
 import copilot from "./assets/copilot.svg";
 import midjourney from "./assets/midjourney.svg";
 import chatgpt from "./assets/chatgpt.svg";
@@ -88,31 +82,33 @@ function App() {
             </div>
           </div>
           <div>
-            {/* <div className="stack">
+            <div className="stack">
               <h2>My stack</h2>
               <div className="stackIcon">
                 <div className="icon">
-                  <img src={react} alt="ReactJS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
                   <p>ReactJS</p>
                 </div>
                 <div className="icon">
-                  <img src={next} alt="NextJS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" />
+
                   <p>NextJS</p>
                 </div>
                 <div className="icon">
-                  <img src={tailwind} alt="Tailwind" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
+
                   <p>Tailwind</p>
                 </div>
                 <div className="icon">
-                  <img src={sass} alt="Sass" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg" />
                   <p>Sass</p>
                 </div>
                 <div className="icon">
-                  <img src={html} alt="HTML" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
                   <p>HTML</p>
                 </div>
                 <div className="icon">
-                  <img src={css} alt="CSS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
                   <p>CSS</p>
                 </div>
                 <div className="icon">
@@ -128,7 +124,7 @@ function App() {
                   <p>Chatgpt</p>
                 </div>
               </div>
-            </div> */}
+            </div>
             <div
               id="projects"
               className={`projects ${

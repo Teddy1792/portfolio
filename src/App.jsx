@@ -113,6 +113,7 @@ function App() {
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
                   <p>HTML</p>
                 </div>
+                {/* 
                 <div className="icon">
                   <img src={copilot} alt="copilot" />
                   <p>Copilot</p>
@@ -124,7 +125,7 @@ function App() {
                 <div className="icon">
                   <img src={midjourney} alt="Midjourney" />
                   <p>Midjourney</p>
-                </div>
+                </div> */}
               </div>
             </div>
             <div

@@ -16,9 +16,7 @@ import passepasse from "./assets/miniatures/passepasse.png";
 import HRNet from "./assets/miniatures/HRNet.png";
 import alfaRomeo from "./assets/miniatures/alfaRomeo.png";
 import hipto from "./assets/miniatures/hipto.png";
-import copilot from "./assets/copilot.svg";
-import midjourney from "./assets/midjourney.svg";
-import chatgpt from "./assets/chatgpt.svg";
+import payloadLogo from "./assets/payloadLogo.svg";
 
 import "./App.scss";
 
@@ -86,6 +84,10 @@ function App() {
               <h2>My stack</h2>
               <div className="stackIcon">
                 <div className="icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg" />
+                  <p>TypeScript</p>
+                </div>
+                <div className="icon">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" />
                   <p>ReactJS</p>
                 </div>
@@ -98,8 +100,12 @@ function App() {
                   <p>MongoDB</p>
                 </div>
                 <div className="icon">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" />
-                  <p>CSS</p>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg" />
+                  <p>Firebase</p>
+                </div>
+                <div className="icon">
+                  <img src={payloadLogo} />
+                  <p>Payload CMS</p>
                 </div>
                 <div className="icon">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" />
@@ -110,8 +116,16 @@ function App() {
                   <p>Sass</p>
                 </div>
                 <div className="icon">
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" />
-                  <p>HTML</p>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" />
+                  <p>GIT</p>
+                </div>
+                <div className="icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/notion/notion-original.svg" />
+                  <p>Notion</p>
+                </div>
+                <div className="icon">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" />
+                  <p>Figma</p>
                 </div>
                 {/* 
                 <div className="icon">
@@ -192,11 +206,22 @@ function App() {
               ref={educationRef}
             >
               <Education
+                title="DataScientest"
+                date="2025 - 2026"
+                diplomaTitle="Fullstack engineer"
+                institution="DataScientest"
+                content="An 18 months Master's program and apprenticeship sanctionned by a level 7 European Qualifications Framework diploma."
+                isFocused={focusedProject === "DataScientest"}
+                onMouseEnter={() => handleMouseEnter("DataScientest")}
+                onMouseLeave={handleMouseLeave}
+                isUnfocused={isUnfocused && focusedProject !== "DataScientest"}
+              />
+              <Education
                 title="openClassrooms"
                 date="2022 - 2023"
                 diplomaTitle="JavaScript React Developer"
                 institution="OpenClassrooms"
-                content="A 14 months program sanctionned by a level 6 European Qualifications Framework diploma."
+                content="A 14 months Bachelor's program sanctionned by a level 6 European Qualifications Framework diploma."
                 isFocused={focusedProject === "openClassrooms"}
                 onMouseEnter={() => handleMouseEnter("openClassrooms")}
                 onMouseLeave={handleMouseLeave}
